@@ -1,0 +1,1 @@
+{"name":"Local: Expression","url":"a:\\codeCorner\\Competitive\\CodeForces\\Expression.cpp","tests":[{"id":1683660506360,"input":"1\n2\n3","output":"9"},{"id":1683660518891,"input":"2\n10\n3","output":"60"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"a:\\codeCorner\\Competitive\\CodeForces\\Expression.cpp","group":"local","local":true}
