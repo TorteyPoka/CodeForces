@@ -7,25 +7,22 @@ void solve()
 {
     long long n, p;
     cin >> n >> p;
-    long long tail = n - 1;
+    long long trail = n - 1;
 
-    vector<long long> person(n), cost(n);
+    vector<pair<long long, long long>> v(n);
+    int loopCount = 0;
 
-    for (long long i = 0; i < n; i++)
-        cin >> person[i];
-    for (long long i = 0; i < n; i++)
-        cin >> cost[i];
+    for(int i = 0; i<n; i++)
+        cin>>v[i].second;
+
+    for(int i = 0; i<n; i++)
+        cin>>v[i].first;
 
     if (n == 1)
     {
         cout << p << "\n";
         return;
     }
-
-    vector<pair<long long, long long>> v(n);
-
-    for (long long i = 0; i < n; i++)
-        v[i] = {cost[i], person[i]};
 
     sort(v.begin(), v.end());
 
@@ -35,18 +32,18 @@ void solve()
 
     for (long long i = 0; i < n; i++)
     {
-        if (tail >= v[i].second)
+        if (trail >= v[i].second)
         {
             sum += (v[i].first * v[i].second);
-            tail -= v[i].second;
+            trail -= v[i].second;
         }
-        else if (tail > 0 && tail < v[i].second)
+        else if (trail > 0 && trail < v[i].second)
         {
-            sum += (v[i].first * tail);
-            tail = 0;
+            sum += (v[i].first *trail);
+            trail = 0;
         }
 
-        if (tail < 1)
+        if (trail < 1)
             break;
     }
 
