@@ -14,13 +14,23 @@ int main()
     ll n, k;
     cin >> n >> k;
 
-    if(k > n)
-        return 0;
-
     ll even_count;
     ll odd_count = 0;
-    // in an ODD range even_count = odd_count - 1
-    // in an EVEN range they are 1:1;
+    // in an ODD range, even_count = odd_count - 1;
+    // in an EVEN range, even_count = odd_count;
+
+    /*
+        follow the theorem;
+        basic rules;
+
+
+        input: x y
+        output: a,b,c,d;
+        ax'y' , bx"y", cx"'y"', dx""y"";
+        relation / function / formula
+        
+
+    */
 
     if (n % 2 == 0)
         even_count = n / 2;
@@ -43,11 +53,25 @@ int main()
         }
     }
 
+    /*
+
+    long long n, k;
+    cin >> n >> k;
+
+    if (k <= (n + 1) / 2)
+        cout << k * 2 - 1 << endl;
+    else
+        cout << (k - (n + 1) / 2) * 2 << endl;
+    
+    return 0;
+
+    */
+
     // for (auto i : ar)
     //     cout << i << " ";
 
     // cout<<endl;
-    cout<< ar[k-1];
+    cout << ar[k - 1];
 
     return 0;
 }
