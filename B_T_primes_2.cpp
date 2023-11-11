@@ -19,7 +19,6 @@ int main()
         cin >> x;
         if (x < 4)
             cout << "NO" << endl;
-        
         else if (x % 2 == 0 && x > 4)
             cout << "NO" << endl;
         else
@@ -30,9 +29,6 @@ int main()
 
             if (d == r)
             {
-                // if(r%2==0)
-                //     r/=2;
-
                 for(int j = 2; j<r; j++)
                 {
                     if(r%j==0)
@@ -46,9 +42,8 @@ int main()
                 cout << "YES" << endl;
             }
             else
-            {
                 cout << "NO" << endl;
-            }
+            
         }
     }
 
