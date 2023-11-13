@@ -1,155 +1,93 @@
 /* Solved by Sakhawat Hossain Mahin, CSE-28th, SMUCT */
+/*
+We know that prime numbers are positive integers that have exactly two distinct positive divisors. 
+Similarly, we'll call a positive integer t Т-prime, if t has exactly three distinct positive divisors.
+
+You are given an array of n positive integers. For each of them determine whether it is Т-prime or not.
+
+Input
+The first line contains a single positive integer, n (1 ≤ n ≤ 105), showing how many numbers are in the array. 
+The next line contains n space-separated integers xi (1 ≤ xi ≤ 1012).
+
+Please, do not use the %lld specifier to read or write 64-bit integers in С++. 
+It is advised to use the cin, cout streams or the %I64d specifier.
+
+Output
+Print n lines: the i-th line should contain "YES" (without the quotes), 
+if number xi is Т-prime, and "NO" (without the quotes), if it isn't.
+
+Examples
+input
+3
+4 5 6
+output
+YES
+NO
+NO
+
+Note
+The given test has three numbers. 
+The first number 4 has exactly three divisors — 1, 2 and 4, 
+thus the answer for this number is "YES". The second number 5 has two divisors (1 and 5), 
+and the third number 6 has four divisors (1, 2, 3, 6), hence the answer for them is "NO".
+
+FINAL VERDICT: Time limit exceeded on test 33
+
+
+ATTENTION: 
+The package for this problem was not updated by the problem writer or 
+Codeforces administration after we've upgraded the judging servers. 
+To adjust the time limit constraint, a solution execution time will be multiplied by 2. For example, 
+if your solution works for 400 ms on judging servers, 
+then the value 800 ms will be displayed and used to determine the verdict.
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
 
-/*
-void SieveOfEratosthenes(ll n) 
-{ 
-    
-    // Create a boolean array "prime[0..n]" and initialize 
-    // all entries it as true. A value in prime[i] will 
-    // finally be false if i is Not a prime, else true. 
-    bool prime[n + 1]; 
-    memset(prime, true, sizeof(prime)); 
-  
-    for (ll p = 2; p * p <= n; p++) { 
-        // If prime[p] is not changed, then it is a prime 
-        if (prime[p] == true) { 
-            // Update all multiples of p greater than or 
-            // equal to the square of it numbers which are 
-            // multiple of p and are less than p^2 are 
-            // already been marked. 
-            for (ll i = p * p; i <= n; i += p) 
-                prime[i] = false; 
-        } 
-    } 
-  
-    // Prll all prime numbers 
-    for (ll p = 2; p <= n; p++) 
-        if (prime[p]) 
-            prllf("%d ",p); 
-} 
-
-*/
-// vector<bool> primes(1000000000000, true);
-
-// void SieveOfEratosthenes()
-// {
-//     for (ll p = 2; p * p <= 1000000000000; p++)
-//     {
-//         if (primes[p] == true)
-//         {
-//             for (ll i = p * p; i <= 1000000000000; i += p)
-//                 primes[i] = false;
-//         }
-//     }
-// }
-
 int main()
 {
-    // SieveOfEratosthenes();
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    ll n;
+    int n;
     cin >> n;
-    ll ar[n];
-
-    for (ll i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        ll count = 0;
-        ll f = 1;
-        ll p = 0;
-        ll inv = 0;
-        ll looper = 0;
-        vector<ll>res;
-
-        cin >> ar[i];
-
-        // if(ar[i] == 999966000289)
-        // {
-        //     cout<<"YES"<<endl;
-        //     break;
-        // }
-        
-        for (ll j = 1; j <= ar[i]; j++)
-        {
-            // cout << j << " " << p << " " << count << " " << ar[i] % j << endl;
-            if (ar[i] % j == 0)
-            {
-                res.push_back(j);
-                count++;
-                p++;
-            }
-            if (count > 3)
-            {
-                looper = 1;
-                f = 0;
-                cout << "NO" << endl;
-                break;
-            }
-        }
-        if (res.size() < 3)
-        {
+        ll x;
+        cin >> x;
+        if (x < 4)
             cout << "NO" << endl;
-            inv = 1;
-        }
-        else if (!looper)
+        else if (x % 2 == 0 && x > 4)
+            cout << "NO" << endl;
+        else
         {
-            if (res[1] < 4)
+            double d = sqrt(x);
+            int r = d;
+            int f = 0;
+
+            if (d == r)
             {
-                cout<<"YES"<<endl;
-                continue;
-            }
-            else
-                for (ll k = 2; k < res[1]; k++)
+                for(int j = 2; j<r; j++)
                 {
-                    if (res[1] % k == 0)
+                    if(r%j==0)
                     {
+                        f = 1;
                         cout<<"NO"<<endl;
-                        inv = 1;
                         break;
                     }
                 }
+                if(!f)
+                cout << "YES" << endl;
+            }
+            else
+                cout << "NO" << endl;
+            
         }
-        if (!inv && f)
-            cout << "YES" << endl;
-
-        // for (auto i : res)
-        //     cout << i << " ";
-        // cout << endl;
     }
-    // ll count = 0, f = 0;
-
-    // for (ll i = 0; i < n; i++)
-    // {
-    //     cin >> ar[i];
-    //     if (primes[ar[i]])
-    //     {
-    //         cout << "NO" << endl;
-    //     }
-    //     else
-    //     {
-    //         for (ll p = 1; p <= ar[i]; p++)
-    //         {
-    //             if (primes[p])
-    //                 count++;
-
-    //             if (count > 3)
-    //             {
-    //                 cout << "NO" << endl;
-    //                 f = 1;
-    //                 break;
-    //             }
-    //         }
-    //         if (!f)
-    //             cout << "YES" << endl;
-    //     }
-    // }
 
     return 0;
 }
