@@ -16,10 +16,10 @@ int main()
         cin>>s;
         string temp;
         temp = s;
-        cnt = 0;
+        int cnt = 0;
         for(int i = 0; i < s.size(); i++)
         {
-
+            
         }
     }
     return 0;
