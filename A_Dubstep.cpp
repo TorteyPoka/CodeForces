@@ -4,6 +4,7 @@ using namespace std;
 #define ll long long
 
 void ans(){ 
+    //!Accepted
     string s;
     cin >> s;
 
@@ -43,21 +44,27 @@ void ans(){
 }
 
 void ans1(){
+    //Accepted
 	string s;
-	int flag=1;
-	cin>>s;
-	for(int i=0;i<s.size();i++){
-	    if(s[i]=='W'&& s[i+1]=='U' && s[i+2]=='B'){
-	        i+=2;
-	        if(!flag){
-	            cout<<" ";
-	        }
-	        continue;
-	    }else {
-	        flag=0;
-	        cout<<s[i];
-	    }
-	}
+    cin>>s;
+    int n = s.size();
+    bool checkWUB = false;
+
+    for(int i = 0; i<n; i++)
+    {
+        if(s[i] == 'W' && s[i+1] == 'U' && s[i+2] == 'B')
+        {
+            i+=2;
+            checkWUB = true;
+            continue;
+        }
+        if(checkWUB) 
+        {
+            cout << " ";
+            checkWUB = false;
+        }
+        cout << s[i];
+    }
 }
 int main()
 {
