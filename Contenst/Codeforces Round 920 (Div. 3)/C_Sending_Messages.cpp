@@ -2,28 +2,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define ll long long
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    int T;
+    ll T;
     cin >> T;
     while (T--)
     {
-        int m, c, b, to;
-        cin >> m >> c >> b >> to;
-        int ar[m];
-        vector<int> v;
-        for (int i = 0; i < m; i++)
-            cin >> ar[i];
+        ll a, b, c, d;
+        cin >> a >> b >> c >> d;
 
-        for(int i = 0; i<m; i++)
-        {
-            if((ar[i] - ) < b)
-                c-=
+        ll ar[a];
+
+        for (ll i = 0; i < a; i++)
+            cin >> ar[i];
+        if(a == 1 && b == ar[0]){
+            cout << "NO" << endl;
+            continue;   
         }
+
+        if ((a * c) < b)
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
     }
     return 0;
 }
