@@ -2,4 +2,6 @@
 .o
 .h
 .json
-.gitignore
+.txt
+.vscode
+
