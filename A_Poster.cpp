@@ -11,6 +11,9 @@ signed main()
     cin.tie(nullptr);
     cout.tie(nullptr);
 
+    freopen("0_input.txt" , "r" , stdin);
+    freopen("1_output.txt", "w", stdout);
+
     int n, k;
     cin >> n >> k;
     string s;

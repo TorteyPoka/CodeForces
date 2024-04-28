@@ -286,7 +286,7 @@ int setBitNumber2(int n)
     return n;
 }
 
-void solve3()
+void solve3() //* Accepted
 {
     int n, k;
     cin >> n >> k;
@@ -295,7 +295,7 @@ void solve3()
 
     if (n > 1)
     {
-        // cout << x << " " << endl;
+        //// cout << x << " " << endl;
         int q = x - 1;
         cout << q << " " << k - q << " ";
         n-=2;
