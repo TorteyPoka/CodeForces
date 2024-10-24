@@ -13,67 +13,20 @@ using namespace std;
 void crack()
 {
     int n;
-    cin >> n;
-    if (n == 1)
-    {
-        cout << 0 << endl;
-        return;
+    cin>>n;
+    int thr = 0, tw = 0;
+    while(n % 3 == 0){
+        n/=3;
+        thr++;
     }
-    bool possible = true;
-    int cnt = 0;
-
-    
-
-    // if ((n % 3 == 0 and (n * 2) % 6 != 0) || n % 6 != 0)
-    // {
-    //     cout << -1 << endl;
-    //     return;
-    // }
-
-    if (n % 6 == 0)
-    {
-        while (n % 6 == 0)
-        {
-            n /= 6;
-            if (n == 2)
-            {
-                possible = false;
-                break;
-            }
-            cnt++;
-        }
-        if (possible)
-            cout << cnt << endl;
-        else
-            cout << -1 << endl;
-        return;
+    while(n % 2 == 0){
+        n/=2;
+        tw++;
     }
-    if (n % 3 == 0)
-    {
-        while (n > 1)
-        {
-            if (n % 6 == 0)
-            {
-                n /= 6;
-            }
-            else
-            {
-                n *= 2;
-            }
-            if (n == 2)
-            {
-                possible = false;
-                break;
-            }
-            cnt++;
-        }
-        if (possible)
-        {
-            cout << cnt << endl;
-        }
-        else
-            cout << -1 << endl;
+    if(n != 1 or thr < tw){
+        cout << -1 << endl;
     }
+    else cout << thr - tw + thr << endl;
 }
 
 int32_t main()

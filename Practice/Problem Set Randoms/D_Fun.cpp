@@ -15,16 +15,11 @@ using namespace std;
 
 void crack()
 {
-    int n;
-    cin>>n;
-    int k = 3, p = 2;
-    int rem = n%k;
-    while(rem != 0){
-        k += pow(2.00, p);
-        rem = n%k;
-        p++;
-    }
-    cout << n/k << endl;
+    int n, x;
+    cin>>n>>x;
+    
+    
+
 }
 
 int32_t main()
@@ -36,4 +31,4 @@ int32_t main()
     }
     //cerr << 1.0 * (clock() - st) / CLOCKS_PER_SEC << endl;
     return 0;
-}
+}   

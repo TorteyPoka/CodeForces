@@ -17,14 +17,12 @@ void crack()
 {
     int n;
     cin>>n;
-    int k = 3, p = 2;
-    int rem = n%k;
-    while(rem != 0){
-        k += pow(2.00, p);
-        rem = n%k;
-        p++;
+    int ans = n/4;
+    n-=(ans*4);
+    if(n){
+        cout << ans + n/2 << endl;
     }
-    cout << n/k << endl;
+    else cout << ans << endl;
 }
 
 int32_t main()
@@ -36,4 +34,4 @@ int32_t main()
     }
     //cerr << 1.0 * (clock() - st) / CLOCKS_PER_SEC << endl;
     return 0;
-}
+}   

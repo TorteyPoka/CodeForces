@@ -15,16 +15,21 @@ using namespace std;
 
 void crack()
 {
-    int n;
-    cin>>n;
-    int k = 3, p = 2;
-    int rem = n%k;
-    while(rem != 0){
-        k += pow(2.00, p);
-        rem = n%k;
-        p++;
+    int n, k;
+    cin>>n>>k;
+    char metrix[n][n];
+    for(int i = 0; i<n; i++){
+        for(int j = 0; j<n; j++){
+            cin>>metrix[i][j];
+        }
+    } 
+
+    for(int i = 0; i<n; i+=k){
+        for(int j = 0; j<n; j+=k){
+            cout << metrix[i][j];
+        }
+        cout << endl;
     }
-    cout << n/k << endl;
 }
 
 int32_t main()

@@ -4,7 +4,7 @@ using namespace std;
     // @author : TorteyPoka
 
 #define test  \
-    int T;    \
+    int T, tc = 0;    \
     cin >> T; \
     while (T--)
 #define faf ios_base::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
@@ -17,14 +17,13 @@ void crack()
 {
     int n;
     cin>>n;
-    int k = 3, p = 2;
-    int rem = n%k;
-    while(rem != 0){
-        k += pow(2.00, p);
-        rem = n%k;
-        p++;
-    }
-    cout << n/k << endl;
+    string s;
+    cin>>s; 
+    if(s.front() == '1' || s.back() == '1' || s.find("11") != s.npos)cout << "YES" << endl;
+    else cout << "NO" << endl;
+
+    
+    
 }
 
 int32_t main()
@@ -32,6 +31,7 @@ int32_t main()
     faf auto st = clock();
     test
     {
+        //cout << "Case " << ++tc << ": ";
         crack();
     }
     //cerr << 1.0 * (clock() - st) / CLOCKS_PER_SEC << endl;
