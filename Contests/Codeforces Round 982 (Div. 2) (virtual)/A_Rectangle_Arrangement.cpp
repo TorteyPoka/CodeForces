@@ -15,12 +15,25 @@ using namespace std;
 
 void crack()
 {
-    int n, m, k;
-    cin>>n>>m>>k;
-    cout << min(k, m) * min(k,n) << endl;    
+    int n;
+    cin>>n; 
+    int highMx = 0,highWid = 0, widMx = 0, widHigh = 0;
+    while(n--){
+        int x, y;
+        cin>>x>>y;
+        if(widMx < x){
+            widMx = x;
+            widHigh = y;
+        }
+        if(highMx < y){
+            highMx = y;
+            highWid = x;
+        }
+    }
+    cout << widMx + highMx + (highMx - widHigh) + (widMx - highWid) + highWid + widHigh << endl;
 }
 
-int32_t main()
+int_fast32_t main()
 {
     faf auto st = clock();
     test

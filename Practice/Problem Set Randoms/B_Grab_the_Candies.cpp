@@ -15,12 +15,22 @@ using namespace std;
 
 void crack()
 {
-    int n, m, k;
-    cin>>n>>m>>k;
-    cout << min(k, m) * min(k,n) << endl;    
+    int n;
+    cin>>n;
+    int evSum =0, odSum = 0;
+    while(n--){
+        int x;
+        cin>>x;
+        if(x&1)odSum += x;
+        else evSum += x;
+    }    
+    if(evSum <= odSum){
+        cout <<"No" << endl;
+    }
+    else cout<< "YES" << endl;
 }
 
-int32_t main()
+int_fast32_t main()
 {
     faf auto st = clock();
     test

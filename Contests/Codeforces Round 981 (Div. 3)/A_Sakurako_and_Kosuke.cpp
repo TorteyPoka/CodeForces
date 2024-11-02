@@ -15,12 +15,13 @@ using namespace std;
 
 void crack()
 {
-    int n, m, k;
-    cin>>n>>m>>k;
-    cout << min(k, m) * min(k,n) << endl;    
+    int n;
+    cin>>n;
+    if(n % 2)cout << "Kosuke\n";
+    else cout << "Sakurako\n" ; 
 }
 
-int32_t main()
+int_fast32_t main()
 {
     faf auto st = clock();
     test

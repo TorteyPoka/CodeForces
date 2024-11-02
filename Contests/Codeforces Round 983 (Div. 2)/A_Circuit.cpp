@@ -12,13 +12,39 @@ using namespace std;
 #define int long long
 /*------------X------------*/
 
+/*
+    0 0 1 1 0 1 0 1 0 1
+    1 1 1 1 1 = 
+    1 1 
+    1 1
+    1 0
+    0 0
+    0 0    
+*/
 
 void crack()
 {
-    int n, m, k;
-    cin>>n>>m>>k;
-    cout << min(k, m) * min(k,n) << endl;    
-}
+    int n;
+    cin>>n;
+    n *= 2;
+    int on = 0, zr = 0;
+    for(int i = 1; i<=n; i++){
+        int x;
+        cin>>x;
+        if(x == 1)on++;
+    }
+    // cerr << n << " " << on << endl;
+    zr = n - on;
+
+    if(!zr){
+        cout << 0 << ' ' << 0 << endl;
+        return;
+    }
+    if(on % 2){
+        cout << 1 << " " << min({n/2, on, zr}) << endl;
+    }
+    else cout << 0 << " " << min({n/2, on, zr}) << endl;
+} 
 
 int32_t main()
 {

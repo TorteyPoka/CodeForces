@@ -11,13 +11,22 @@ using namespace std;
 #define endl '\n'
 #define int long long
 /*------------X------------*/
+/*
+    2 3 1 2
+    1,1 1,2 1,3
+    2,1 2,2 2,3
 
+    n - r = 1;
+    m - c = 1;
+*/
 
 void crack()
 {
-    int n, m, k;
-    cin>>n>>m>>k;
-    cout << min(k, m) * min(k,n) << endl;    
+    int n, m, r, c;
+    cin>>n>>m>>r>>c;
+    int totalPer = n*m;
+    int left = (r-1) * m + c;
+
 }
 
 int32_t main()

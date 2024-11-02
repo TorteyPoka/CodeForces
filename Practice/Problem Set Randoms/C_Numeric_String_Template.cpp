@@ -22,7 +22,30 @@ void solve()
     while(m--){
         string s;
         cin>>s;
-
+        if(s.size() == n){
+            map<int,char>mp;
+            map<char, int>k;
+            bool can = true;
+            for(int i = 0; i<n; i++){
+                if(k.find(s[i]) != k.end()){
+                    if(k[s[i]] != ar[i]){
+                        can = false;
+                        break;
+                    }
+                }
+                if(mp.find(ar[i]) != mp.end()){
+                    if(mp[ar[i]] != s[i]){
+                        can = false;
+                        break;
+                    }
+                }
+                k[s[i]] = ar[i];
+                mp[ar[i]] = s[i];
+            }
+            if(can)cout << "YES" << endl;
+            else cout << "NO" << endl;
+        }  
+        else cout << "NO" << endl;
 
     }
 }
