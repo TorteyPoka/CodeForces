@@ -10,7 +10,7 @@ using namespace std;
 struct Assistant{
     int t, z, y, ans;
 };
-typedef Assistant Ass;
+typedef Assistant As;
 
 int32_t main()
 {
@@ -18,7 +18,7 @@ int32_t main()
 
     int m, n;
     cin>>m>>n;
-    Ass ar[n];
+    As ar[n];
     for(int i = 0; i<n; i++){
         cin>>ar[i].t>>ar[i].z>>ar[i].y;
     }

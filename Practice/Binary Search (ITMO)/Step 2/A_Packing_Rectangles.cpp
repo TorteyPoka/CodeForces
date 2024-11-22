@@ -16,6 +16,8 @@ int good(int x)
 int32_t main()
 {
     ios_base::sync_with_stdio(false);
+    auto st = clock();
+
     cin >> a >> b >> n;
 
     int l = 0, r = 1;
@@ -32,6 +34,7 @@ int32_t main()
     }
 
     cout << r << endl;
+    cout << 1.0 * (clock() - st) / CLOCKS_PER_SEC << endl;
 
     return 0;
 }
