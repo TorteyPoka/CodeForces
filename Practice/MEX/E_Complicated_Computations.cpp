@@ -54,7 +54,7 @@ int32_t main()
     for (int i = 1; i <= n + 2; i++)
     {   
         mex.insert(i);
-    }
+    }   
     for(int i = 1; i<n-1; i++){
         if(mex.find(ar[i]) != mex.end()){
             mex.erase(ar[i]);

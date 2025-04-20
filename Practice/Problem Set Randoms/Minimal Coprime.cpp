@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//		@author: TorteyPoka
+
+#define el '\n'
+#define int long long
+#define yes cout << "Yes" << el;
+#define no cout << "No" << el;
+
+map<int,int> countmp(int* a, int n){
+	map<int,int>mp;
+	for(int i = 0; i<n; i++){
+		mp[a[i]]++;
+	}
+	return mp;
+}
+
+/*----------X----------*//*
+
+
+*/
+
+
+void solve() {
+	int l, r;
+	cin>>l>>r;
+	if(l == 1 and r==1)cout << 1 << endl;
+	else cout << r-l << el;
+}	
+signed main() {
+	ios_base::sync_with_stdio(false); cin.tie(nullptr), cout.tie(nullptr);
+	int T = 1, tc = 1;
+	cin >> T;
+	for (; tc <= T; tc++) {
+		// cerr << "Case " << tc << ": ";
+		solve();
+	}
+
+	return 0;
+}
